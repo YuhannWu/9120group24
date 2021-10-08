@@ -10,6 +10,7 @@ DROP TABLE IF EXISTS Person CASCADE;
 
 DROP TABLE IF EXISTS Athlete CASCADE;
 
+
 DROP TABLE IF EXISTS National_team CASCADE;
 
 
@@ -60,10 +61,10 @@ DROP TABLE IF EXISTS Scheduled CASCADE;
 
 DROP TABLE IF EXISTS booking CASCADE;
 
+
 -- This location table stores geographical information of different places
 -- such as Accommodation and Venue. Information includes location_ids, names
 -- address, lattitudes and longtitudes
-
 CREATE TABLE "Location" (
 	location_id INTEGER PRIMARY KEY,
 	location_name VARCHAR(50) NOT NULL,
@@ -135,7 +136,6 @@ INSERT INTO National_team VALUES (2401, 'CHN', 2);
 INSERT INTO National_team VALUES (2402, 'AUS', 2);
 INSERT INTO National_team VALUES (2403, 'USA', 2);
 
-
 -- where athelets participates games. Information includes ids, names, locations
 -- build data and build cost
 CREATE TABLE Venue (
@@ -161,7 +161,7 @@ CREATE TABLE Information (
 INSERT INTO Information VALUES (123,'WOMENS 100M AIR RI','noboday violation');	
 INSERT INTO Information VALUES (456,'Mens double diving');
 INSERT INTO Information VALUES (789,'Mens double diving');
-					
+		
 -- This sport event table stores data about the 2024 Brisbane Olympic Game sport events
 -- holds. Also, there might be different stage in a game. Stages might vary in GROUPS, 
 -- Quarter finals, Semi-finals and finals. Information includes event ids, event datas
@@ -195,7 +195,6 @@ CREATE TABLE Participates (
 );
 INSERT INTO Participates VALUES (9011,20240007,2402);
 INSERT INTO Participates VALUES (9001,20240007,2403);
-
 					
 --Results table is superclass table which is used for recoding the final sports results	
  CREATE TABLE "Result" (					
@@ -207,7 +206,7 @@ INSERT INTO Participates VALUES (9001,20240007,2403);
 );
 INSERT INTO "Result" VALUES (123,98.99,1,123);
 INSERT INTO "Result" VALUES (456,98.99,1,789);
-					
+		
 --Scorebased_results table is subclass table of Results					
 CREATE TABLE Scorebased_results (
 	result_id INTEGER NOT NULL,
@@ -217,8 +216,8 @@ CREATE TABLE Scorebased_results (
 	PRIMARY KEY (Info_id, result_id)
 );
 INSERT INTO Scorebased_results VALUES (123,789,90.20,45.00);
-INSERT INTO Scorebased_results VALUES (456,156,90.20,45.00);
-					
+INSERT INTO Scorebased_results VALUES (456,156,90.20,45.00);	
+		
 --Timebased_results table is subclass table of Results
 CREATE TABLE Timebased_results (
 	result_id INTEGER NOT NULL,
