@@ -337,6 +337,6 @@ CREATE TABLE booking(
 	FOREIGN KEY (pid) REFERENCES PERSON(pid) ON DELETE CASCADE,
 	CHECK (person_role = 'officials' or person_role = 'athlete')
 );
-INSERT INTO booking VALUES (111,'officials','20240007');
-INSERT INTO booking VALUES (121,'athlete', '20240008');			
+INSERT INTO booking VALUES (111,'officials', 20240007);
+INSERT INTO booking VALUES (121,'athlete', 20240008);			
 
